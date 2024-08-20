@@ -3,7 +3,7 @@ version: 0.0
 os: linux
 files: 
   - source: /src/
-    destination: /home/ubuntu/CICD/src/
+    destination: /home/ubuntu/CICD/test_src/
     # overwrite: true
 file_exists_behavior: OVERWRITE
 permissions:
