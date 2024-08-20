@@ -25,7 +25,7 @@ SECRET_KEY = '+ic8cucqn9k$8v$x940il^-3%df2$q%m%0ns(91^ur($(^+&-9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 LOGIN_URL = '/login'
 
