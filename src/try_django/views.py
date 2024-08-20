@@ -16,7 +16,7 @@ def home_page(request):
     # print (datetime.now(),'3333333333333333333333333333333')
     # print (res,res.text,'RESPONSE FROM AWS API GATEWAY...')
     qs = BlogPost.objects.all()[:5]
-    context = {"title": "Welcome to Try Django;;", 'blog_list': qs}
+    context = {"title": "Welcome to Try Django - CICD", 'blog_list': qs}
     # print (datetime.now(),'444444444444444444444444')
     return render(request, "home.html", context)
 
