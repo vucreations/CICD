@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+{% for group in groups %}
+  <file path="{{ group.nodeid }}">
+    {% for item in group.items %}
+      <testCase name="{{ item.name }}" time="{{ item.duration }}"/>
+    {% endfor %}
+  </file>
+{% endfor %}
+</testExecutions>
