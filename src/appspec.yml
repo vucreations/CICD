@@ -3,11 +3,11 @@ version: 0.0
 os: linux
 files: 
   - source: /
-    destination: /home/ubuntu/CICD/src/
+    destination: /home/ubuntu/CICD/
     # overwrite: true
 file_exists_behavior: OVERWRITE
 permissions:
-  - object: /home/ubuntu/CICD/src/
+  - object: /home/ubuntu/CICD/
     owner: ubuntu
     group: ubuntu
 hooks:
