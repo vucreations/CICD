@@ -15,7 +15,6 @@ from .models import BlogPost
 
 # Create Retrieve Update Delete
 
-
 import requests
 def blog_post_list_view(request):
     # list out objects 
