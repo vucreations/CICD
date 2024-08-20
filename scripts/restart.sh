@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -e
+echo "Starting restart.sh script" > /home/ubuntu/CICD/restart.log
+echo "Listing files before restart:" >> /home/ubuntu/CICD/restart.log
+ls -l /home/ubuntu/CICD/src/ >> /home/ubuntu/CICD/restart.log
 
 PROJDIR="/home/ubuntu/CICD/src"
 PIDFILE="/home/ubuntu/uwsgi.pid"
@@ -27,4 +31,6 @@ UWSGI_EXECUTABLE="/home/ubuntu/test_env/bin/uwsgi"
 
 $UWSGI_EXECUTABLE --chdir /home/ubuntu/CICD/src --socket /home/ubuntu/try_django.sock --module try_django.wsgi:application --pidfile=/home/ubuntu/uwsgi.pid --master --processes 2 --threads 1 --chmod-socket=666 -b 32768 --daemonize=/home/ubuntu/CICD.log
 echo "Proj Restarted."
-
+echo "Listing files after restart:" >> /home/ubuntu/CICD/restart.log
+ls -l /home/ubuntu/CICD/src/ >> /home/ubuntu/CICD/restart.log
+echo "Restart script completed successfully." >> /home/ubuntu/CICD/restart.log
