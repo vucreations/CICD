@@ -14,7 +14,7 @@ def home_page(request):
     # print (datetime.now(),'2222222222222222222')
     res = requests.get('https://1hafzd3420.execute-api.us-east-1.amazonaws.com/v1/?state_code=6&district_code=36')
     # print (datetime.now(),'3333333333333333333333333333333')
-    # print (res,res.text,'RESPONSE FROM AWS API GATEWAY......')
+    # print (res,res.text,'RESPONSE FROM AWS API GATEWAY.....')
     qs = BlogPost.objects.all()[:5]
     context = {"title": "Welcome to Try Django - CICD SNS & LAMBDA TEST.", 'blog_list': qs}
     # print (datetime.now(),'444444444444444444444444')
