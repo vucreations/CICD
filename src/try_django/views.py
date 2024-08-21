@@ -17,7 +17,7 @@ def home_page(request):
     # print (res,res.text,'RESPONSE FROM AWS API GATEWAY....')
     qs = BlogPost.objects.all()[:5]
     context = {"title": "Welcome to Try Django - CICD SNS & LAMBDA TEST.", 'blog_list': qs}
-    # print (datetime.now(),'444444444444444444444444')
+    # print (datetime.now(),'44444444444444444444444')
     return render(request, "home.html", context)
 
 
