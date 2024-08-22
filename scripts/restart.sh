@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo systemctl restart nginx
+
 set -e
 echo "Starting restart.sh script" > /home/ubuntu/CICD/restart.log
 echo "Listing files before restart:" >> /home/ubuntu/CICD/restart.log
