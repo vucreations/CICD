@@ -1,5 +1,7 @@
 #!/bin/bash
 
+systemctl stop apache2
+
 sudo systemctl restart nginx
 
 set -e
