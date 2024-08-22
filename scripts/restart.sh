@@ -1,6 +1,6 @@
 #!/bin/bash
 
-systemctl stop apache2
+sudo systemctl stop apache2
 
 sudo systemctl restart nginx
 
@@ -15,9 +15,19 @@ VENVDIR="/home/ubuntu/test_env"
 
 cd $PROJDIR
 
+# if [ -f $PIDFILE ]; then
+#         kill -9 `cat -- $PIDFILE`
+#         rm -f -- $PIDFILE
+# fi
+
 if [ -f $PIDFILE ]; then
-        kill -9 `cat -- $PIDFILE`
-        rm -f -- $PIDFILE
+    PID=$(cat -- $PIDFILE)
+    if ps -p $PID > /dev/null; then
+        kill -9 $PID
+    else
+        echo "Process $PID not found, removing stale PID file"
+    fi
+    rm -f -- $PIDFILE
 fi
 
 # Activate the virtual environment
